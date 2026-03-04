@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Layout from './components/Layout';
+import TopicsPage from './pages/TopicsPage';
+import UploadPage from './pages/UploadPage';
+import TopicDetailPage from './pages/TopicDetailPage';
+import FlashcardsPage from './pages/FlashcardsPage';
+import QuizPage from './pages/QuizPage';
+import DiscussionPage from './pages/DiscussionPage';
+import ReviewPage from './pages/ReviewPage';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<TopicsPage />} />
+          <Route path="upload" element={<UploadPage />} />
+          <Route path="topics/:id" element={<TopicDetailPage />} />
+          <Route path="topics/:id/flashcards" element={<FlashcardsPage />} />
+          <Route path="topics/:id/quiz" element={<QuizPage />} />
+          <Route path="topics/:id/discuss" element={<DiscussionPage />} />
+          <Route path="review" element={<ReviewPage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 

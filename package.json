@@ -6,18 +6,26 @@
     "@radix-ui/react-dialog": "^1.1.5",
     "@radix-ui/react-slot": "^1.1.1",
     "@shadcn/ui": "^0.0.4",
+    "autoprefixer": "^10.4.27",
+    "axios": "^1.13.6",
     "cra-template": "1.2.0",
     "lucide-react": "^0.474.0",
+    "postcss": "^8.5.8",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-dropzone": "^15.0.0",
+    "react-router-dom": "^7.13.1",
     "react-scripts": "5.0.1",
+    "tailwindcss": "^3.4.19",
     "web-vitals": "^4.2.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "server": "cd server && node src/index.js",
+    "server:dev": "cd server && nodemon src/index.js"
   },
   "eslintConfig": {
     "extends": [
