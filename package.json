@@ -20,11 +20,11 @@
     "web-vitals": "^4.2.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "node server/src/index.js",
+    "build": "npm install && react-scripts build && cd server && npm install",
+    "dev": "react-scripts start",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "server": "cd server && node src/index.js",
     "server:dev": "cd server && nodemon src/index.js"
   },
   "eslintConfig": {
