@@ -44,6 +44,8 @@ async function initDB() {
   }
 }
 
-initDB().then(() => {
-  app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+// Start server immediately so Railway health check passes, then init DB
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+  initDB();
 });
